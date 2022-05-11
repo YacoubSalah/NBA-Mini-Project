@@ -12,14 +12,21 @@
 </head>
 
 <body>
-    <input id="teamNameInputField" type="text">
-    <button id="getRosterButton">Get Roster</button>
+    <div id="searchBar">
+        <input id="teamNameInputField" type="text">
+        <button id="getRosterButton" class="button-os">Get Roster</button>
+    </div>
+
     <div id="dataContainer"></div>
 
     <script id="dataTemplate" type="text/x-handlebars-template">
         {{#each data}}
-            <div>{{this.firstName}} {{this.lastName}}</div>
-            <img src="https://nba-players.herokuapp.com/players/{{this.lastName}}/{{this.firstName}}" alt="">
+            <div class="playerCard">
+                <div>{{this.firstName}} {{this.lastName}}</div>
+                <div>{{this.jersy}}</div>
+                <img src="https://nba-players.herokuapp.com/players/{{this.lastName}}/{{this.firstName}}" width="350px" height="254px" alt="">
+                <div>{{this.pos}}</div>
+            </div>
         {{/each}}
     </script>
 
